@@ -1,5 +1,5 @@
 
-
+//Contains a very impotant logic
 public class Solution {
     
 
@@ -17,7 +17,8 @@ public class Solution {
         
         for(int i=0;i<root.children.size();i++){
             TreeNode<Integer> child = findSecondLargest(root.children.get(i));
-            if(child.data > largest.data){
+            //This logic is very important
+		if(child.data > largest.data){
                 secondLargest = largest;
                 largest = child;
             }
