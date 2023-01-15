@@ -26,6 +26,7 @@ public class Solution {
 				}
 			}
 			System.out.println();
+			//reset the destination in path
 			path[i][j] = 0;
 			return;
 		}
@@ -33,7 +34,8 @@ public class Solution {
 		printAllPath(maze, path, n, i, j + 1); // right
 		printAllPath(maze, path, n, i + 1, j); // bottom
 		printAllPath(maze, path, n, i, j - 1); // left
-
+		
+		//reset the index
 		path[i][j] = 0;
 	}
 
