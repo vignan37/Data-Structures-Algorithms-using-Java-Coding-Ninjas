@@ -1,3 +1,5 @@
+//Find Those 3 values and find the minimum of them.
+
 public class Solution {
 
 	public static int countMinStepsToOne(int n) {
