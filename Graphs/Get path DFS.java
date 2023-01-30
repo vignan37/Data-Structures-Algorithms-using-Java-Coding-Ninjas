@@ -1,29 +1,36 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 import java.util.*;
 public class Solution {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        int V = s.nextInt();
-        int E = s.nextInt();
-        int edges[][]=new int[V][V];
-        for(int i=0;i<E;i++){
-            int sv=s.nextInt();
-            int ev=s.nextInt();
-            edges[sv][ev]=1;
-            edges[ev][sv]=1;
-        }
-        int V1=s.nextInt();
-        int V2=s.nextInt();
-        boolean visited[]=new boolean[V];
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+        Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int e= sc.nextInt();
+		int edges[][]= new int[n][n];
+
+		for(int i=0;i<e;i++){
+			int fv =sc.nextInt();
+			int sv = sc.nextInt();
+			edges[fv][sv]=1;
+			edges[sv][fv]=1;
+		}
+		int V1=sc.nextInt();
+        int V2=sc.nextInt();
+        boolean visited[]=new boolean[n];
         ArrayList<Integer> ans=getPathDFS(edges,visited,V1,V2);
         if(ans!=null){
         for(int elem:ans)
         {
             System.out.print(elem+" ");
         }
-    }
-    }
-    public static ArrayList<Integer> getPathDFS(int[][] edges,boolean[] visited,int V1,int V2){
+
+	}
+	}
+
+	public static ArrayList<Integer> getPathDFS(int[][] edges,boolean[] visited,int V1,int V2){
         if(V1==V2)
         {
             ArrayList<Integer> ans=new ArrayList<>();
@@ -46,5 +53,6 @@ public class Solution {
             }
         }
         return null;
-    }
+	}
+
 }
