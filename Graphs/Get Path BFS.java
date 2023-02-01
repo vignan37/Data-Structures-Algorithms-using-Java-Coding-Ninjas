@@ -1,8 +1,8 @@
 /*
-
 We use queue for the BFS.
-We'll need to keep track of the parents of each vertex using map.
-when you find the kid we're looking for, create the arraylist using while (!arraylist.contains(firstvertex)) add the kid and its parents until u get first vertex.
+We use while loop & condition is while (!q.isEmpty()) q is not empty do.
+The special task here is to map every kid with its parent to get the path & we use hash map.
+We build arraylist output by using while loop where condition is while(!al.contains(firstvertex)) keep adding kid and its ansistors.
 
 */
 
